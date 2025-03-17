@@ -27,14 +27,14 @@ const Hero = () => {
         <div className="max-w-3xl animate-fade-in">
           <p className="text-portfolio-teal mb-4 font-mono">Hi, my name is</p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-portfolio-light">
-            Your Name
+            C A Aravind
           </h1>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-portfolio-slate">
-            I build amazing digital experiences.
+            Full Stack Developer
           </h2>
           <p className="text-portfolio-slate text-lg md:text-xl mb-8 max-w-2xl">
-            I'm a software developer specializing in building exceptional digital experiences.
-            Currently, I'm focused on creating accessible, human-centered products.
+            Dynamic and passionate Full Stack Developer with a strong foundation in web development, 
+            database management, and cybersecurity. Currently a Computer Science and Applications Student.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button 

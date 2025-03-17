@@ -14,47 +14,39 @@ interface Project {
 const Projects = () => {
   const projects: Project[] = [
     {
-      title: "Project One",
-      description: "A web application for tracking fitness goals and workouts. Features include user authentication, progress charts, and custom workout plans.",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      title: "Online Clothing Store",
+      description: "Streamlined e-commerce platform for online clothing store operations. Features include inventory management, user authentication, and shopping cart functionality.",
+      technologies: ["HTML", "CSS", "PHP", "MySQL"],
       githubLink: "#",
       liveLink: "#",
       featured: true
     },
     {
-      title: "Project Two",
-      description: "E-commerce platform with product catalog, shopping cart, and payment processing. Implemented using modern web technologies.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
+      title: "Network Security Dashboard",
+      description: "A comprehensive dashboard for monitoring network security, inspired by the 'Connect and Protect' Google certification course.",
+      technologies: ["Python", "JavaScript", "CSS", "Security APIs"],
       githubLink: "#",
-      liveLink: "#",
       featured: true
     },
     {
-      title: "Project Three",
-      description: "Real-time chat application with private and group messaging functionality. Includes user authentication and message history.",
-      technologies: ["React", "Socket.io", "Firebase", "CSS Modules"],
+      title: "Data Analysis Tool",
+      description: "Tool for analyzing and visualizing data sets, developed using skills acquired from IBM's Data Analysis with Python certification.",
+      technologies: ["Python", "Pandas", "Matplotlib", "Jupyter"],
       githubLink: "#",
       featured: false
     },
     {
-      title: "Project Four",
-      description: "Weather application that displays current conditions and forecasts based on user location or search. Uses third-party weather API.",
-      technologies: ["JavaScript", "HTML5", "CSS3", "REST API"],
+      title: "Cybersecurity Risk Assessment",
+      description: "Application to evaluate and manage security risks in computer systems, based on Google's 'Play it Safe' certification principles.",
+      technologies: ["JavaScript", "HTML5", "CSS3", "Security APIs"],
       githubLink: "#",
       liveLink: "#",
       featured: false
     },
     {
-      title: "Project Five",
-      description: "Task management application with features like task creation, due dates, priority levels, and task categories.",
-      technologies: ["Vue.js", "Vuex", "Express", "PostgreSQL"],
-      githubLink: "#",
-      featured: false
-    },
-    {
-      title: "Project Six",
-      description: "Blog platform with content management system, user authentication, and commenting functionality.",
-      technologies: ["React", "GraphQL", "Node.js", "MongoDB"],
+      title: "Full Stack Portfolio",
+      description: "Personal portfolio website showcasing skills and projects, with responsive design and modern web technologies.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
       githubLink: "#",
       featured: false
     }

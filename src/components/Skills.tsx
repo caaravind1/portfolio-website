@@ -10,47 +10,51 @@ interface SkillCategory {
 const Skills = () => {
   const skillCategories: SkillCategory[] = [
     {
-      title: "Frontend",
+      title: "Technical Skills",
       skills: [
-        "HTML & CSS", 
-        "JavaScript (ES6+)", 
-        "React", 
-        "TypeScript", 
-        "Next.js", 
-        "Tailwind CSS"
-      ]
-    },
-    {
-      title: "Backend",
-      skills: [
-        "Node.js", 
-        "Express", 
-        "RESTful APIs", 
-        "GraphQL", 
-        "MongoDB", 
-        "PostgreSQL"
-      ]
-    },
-    {
-      title: "Tools & Others",
-      skills: [
-        "Git & GitHub", 
-        "Docker", 
-        "AWS", 
-        "CI/CD", 
-        "Jest", 
-        "Figma"
+        "HTML", 
+        "CSS", 
+        "JavaScript", 
+        "PHP", 
+        "MySQL", 
+        "Python",
+        "C",
+        "C++",
+        "Java",
+        "Linux"
       ]
     },
     {
       title: "Soft Skills",
       skills: [
-        "Problem Solving", 
+        "Team Leadership", 
         "Communication", 
-        "Team Collaboration", 
-        "Time Management", 
-        "Adaptability", 
-        "Creative Thinking"
+        "Security System", 
+        "Critical Problem Solving", 
+        "Problem-Solving", 
+        "Creativity",
+        "Time Management",
+        "Eye for Detail"
+      ]
+    },
+    {
+      title: "Certifications",
+      skills: [
+        "Full Stack Development", 
+        "Play it Safe: Manage Security Risks (Google)", 
+        "Foundation of Cybersecurity (Google)", 
+        "Data Analysis with Python (IBM)", 
+        "Data Science using Python (IBM)",
+        "Connect and Protect: Networks and Network Security (Google)"
+      ]
+    },
+    {
+      title: "Languages",
+      skills: [
+        "Malayalam - Proficient", 
+        "English - Proficient", 
+        "Hindi - Proficient", 
+        "Tamil - Conversational"
       ]
     }
   ];

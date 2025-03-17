@@ -56,7 +56,7 @@ const Navbar = () => {
               scrollToSection('hero');
             }}
           >
-            Portfolio
+            C.A.Aravind
           </a>
 
           {/* Desktop Navigation */}

@@ -1,13 +1,23 @@
 
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useToast } from "@/hooks/use-toast";
 
 const Hero = () => {
+  const { toast } = useToast();
+  
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleResumeClick = () => {
+    toast({
+      title: "Resume",
+      description: "Resume download feature coming soon! Check back later.",
+    });
   };
 
   return (
@@ -33,7 +43,11 @@ const Hero = () => {
             >
               Learn more about me
             </Button>
-            <Button variant="outline" className="border-portfolio-teal text-portfolio-teal hover:bg-portfolio-teal/10">
+            <Button 
+              variant="outline" 
+              className="border-portfolio-teal text-portfolio-teal hover:bg-portfolio-teal/10"
+              onClick={handleResumeClick}
+            >
               View Resume
             </Button>
           </div>

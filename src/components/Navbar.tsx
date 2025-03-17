@@ -2,10 +2,12 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useToast } from "@/hooks/use-toast";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +31,13 @@ const Navbar = () => {
       section.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
     }
+  };
+
+  const handleResumeClick = () => {
+    toast({
+      title: "Resume",
+      description: "Resume download feature coming soon! Check back later.",
+    });
   };
 
   return (
@@ -72,7 +81,11 @@ const Navbar = () => {
               e.preventDefault();
               scrollToSection('contact');
             }}>Contact</a>
-            <Button variant="outline" className="border-portfolio-teal text-portfolio-teal hover:bg-portfolio-teal/10">
+            <Button 
+              variant="outline" 
+              className="border-portfolio-teal text-portfolio-teal hover:bg-portfolio-teal/10"
+              onClick={handleResumeClick}
+            >
               Resume
             </Button>
           </nav>
@@ -122,7 +135,11 @@ const Navbar = () => {
             e.preventDefault();
             scrollToSection('contact');
           }}>Contact</a>
-          <Button variant="outline" className="border-portfolio-teal text-portfolio-teal hover:bg-portfolio-teal/10 mt-6">
+          <Button 
+            variant="outline" 
+            className="border-portfolio-teal text-portfolio-teal hover:bg-portfolio-teal/10 mt-6"
+            onClick={handleResumeClick}
+          >
             Resume
           </Button>
         </nav>

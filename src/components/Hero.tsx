@@ -2,9 +2,12 @@
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from "@/hooks/use-toast";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useState } from 'react';
 
 const Hero = () => {
   const { toast } = useToast();
+  const [showResumeDialog, setShowResumeDialog] = useState(false);
   
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about');
@@ -14,10 +17,7 @@ const Hero = () => {
   };
 
   const handleResumeClick = () => {
-    toast({
-      title: "Resume",
-      description: "Resume download feature coming soon! Check back later.",
-    });
+    setShowResumeDialog(true);
   };
 
   return (
@@ -62,6 +62,21 @@ const Hero = () => {
           <ArrowDown size={24} />
         </button>
       </div>
+
+      <Dialog open={showResumeDialog} onOpenChange={setShowResumeDialog}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden">
+          <DialogHeader>
+            <DialogTitle className="text-portfolio-teal font-bold text-xl">C A Aravind - Resume</DialogTitle>
+          </DialogHeader>
+          <div className="w-full h-[calc(90vh-100px)] overflow-auto">
+            <iframe 
+              src="/lovable-uploads/afad9125-9d3a-4790-978a-bfb5603bfe6e.png" 
+              className="w-full h-full" 
+              title="Resume"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

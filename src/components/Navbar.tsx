@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from "@/hooks/use-toast";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showResumeDialog, setShowResumeDialog] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -34,10 +36,7 @@ const Navbar = () => {
   };
 
   const handleResumeClick = () => {
-    toast({
-      title: "Resume",
-      description: "Resume download feature coming soon! Check back later.",
-    });
+    setShowResumeDialog(true);
   };
 
   return (
@@ -144,6 +143,21 @@ const Navbar = () => {
           </Button>
         </nav>
       </div>
+      
+      <Dialog open={showResumeDialog} onOpenChange={setShowResumeDialog}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden">
+          <DialogHeader>
+            <DialogTitle className="text-portfolio-teal font-bold text-xl">C A Aravind - Resume</DialogTitle>
+          </DialogHeader>
+          <div className="w-full h-[calc(90vh-100px)] overflow-auto">
+            <iframe 
+              src="/lovable-uploads/afad9125-9d3a-4790-978a-bfb5603bfe6e.png" 
+              className="w-full h-full" 
+              title="Resume"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </header>
   );
 };

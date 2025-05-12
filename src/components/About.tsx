@@ -35,7 +35,7 @@ const About = () => {
         >
           <div className={`w-64 h-64 sm:w-80 sm:h-80 bg-gray-300 rounded relative z-10 overflow-hidden transition-all duration-500 ${isHovered ? 'shadow-[0_0_30px_rgba(100,255,218,0.4)]' : ''}`}>
             <img 
-              src="/lovable-uploads/39e31d1c-c192-453e-bbcf-627f738775b0.png" 
+              src="/lovable-uploads/8f684ce8-90fd-498b-a871-691381aafd81.png" 
               alt="C A Aravind" 
               className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-105' : ''}`}
             />

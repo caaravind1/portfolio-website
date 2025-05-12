@@ -55,7 +55,7 @@ const Navbar = () => {
               scrollToSection('hero');
             }}
           >
-            C.A.Aravind
+            C A Aravind
           </a>
 
           {/* Desktop Navigation */}

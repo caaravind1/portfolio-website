@@ -21,7 +21,7 @@ const About = () => {
           </p>
           <p className="text-portfolio-slate mb-4">
             I graduated from SCMS School of Technology and Management Kochi, where I expanded my
-            knowledge and skills in Computer Science with a GPA of 6.76.
+            knowledge and skills in Computer Science with a GPA of 6.
           </p>
           <p className="text-portfolio-slate">
             Besides my technical pursuits, I've served as a Volunteer Secretary of the National Service Scheme (NSS)

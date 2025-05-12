@@ -30,7 +30,7 @@ const Hero = () => {
             C A Aravind
           </h1>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-portfolio-slate">
-            Full Stack Developer
+            Full Stack Developer, Data Analysis Enthusiast
           </h2>
           <p className="text-portfolio-slate text-lg md:text-xl mb-8 max-w-2xl">
             Dynamic and passionate Full Stack Developer with a strong foundation in web development, 

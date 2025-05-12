@@ -151,7 +151,7 @@ const Navbar = () => {
           </DialogHeader>
           <div className="w-full h-[calc(90vh-100px)] overflow-auto">
             <iframe 
-              src="/lovable-uploads/afad9125-9d3a-4790-978a-bfb5603bfe6e.png" 
+              src="/lovable-uploads/39e31d1c-c192-453e-bbcf-627f738775b0.png" 
               className="w-full h-full" 
               title="Resume"
             />

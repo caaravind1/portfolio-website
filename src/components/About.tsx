@@ -10,7 +10,7 @@ const About = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="animate-slide-up">
           <p className="text-portfolio-slate mb-4">
-            Hello! I'm C A Aravind, a Computer Science and Applications student with a passion for 
+            Hello! I'm C A Aravind, a Bachelor's of Computer Application Graduate with a passion for 
             Full Stack Development. My journey in web development began with a curiosity for building 
             digital solutions that make a difference.
           </p>
@@ -20,8 +20,8 @@ const About = () => {
             and contribute to impactful projects while continuously growing both technically and personally.
           </p>
           <p className="text-portfolio-slate mb-4">
-            Currently, I'm studying at SCMS School of Technology and Management Kochi, where I'm expanding my
-            knowledge and skills in Computer Science.
+            I graduated from SCMS School of Technology and Management Kochi, where I expanded my
+            knowledge and skills in Computer Science with a GPA of 6.76.
           </p>
           <p className="text-portfolio-slate">
             Besides my technical pursuits, I've served as a Volunteer Secretary of the National Service Scheme (NSS)
@@ -35,7 +35,7 @@ const About = () => {
         >
           <div className={`w-64 h-64 sm:w-80 sm:h-80 bg-gray-300 rounded relative z-10 overflow-hidden transition-all duration-500 ${isHovered ? 'shadow-[0_0_30px_rgba(100,255,218,0.4)]' : ''}`}>
             <img 
-              src="/lovable-uploads/afad9125-9d3a-4790-978a-bfb5603bfe6e.png" 
+              src="/lovable-uploads/39e31d1c-c192-453e-bbcf-627f738775b0.png" 
               alt="C A Aravind" 
               className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-105' : ''}`}
             />

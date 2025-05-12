@@ -34,7 +34,7 @@ const Hero = () => {
           </h2>
           <p className="text-portfolio-slate text-lg md:text-xl mb-8 max-w-2xl">
             Dynamic and passionate Full Stack Developer with a strong foundation in web development, 
-            database management, and cybersecurity. Currently a Computer Science and Applications Student.
+            database management, and cybersecurity. Bachelor's of Computer Application Graduate.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button 
@@ -70,7 +70,7 @@ const Hero = () => {
           </DialogHeader>
           <div className="w-full h-[calc(90vh-100px)] overflow-auto">
             <iframe 
-              src="/lovable-uploads/afad9125-9d3a-4790-978a-bfb5603bfe6e.png" 
+              src="/lovable-uploads/39e31d1c-c192-453e-bbcf-627f738775b0.png" 
               className="w-full h-full" 
               title="Resume"
             />

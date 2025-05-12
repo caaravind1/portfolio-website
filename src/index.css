@@ -103,6 +103,11 @@
     background-color: rgba(100, 255, 218, 0.3);
     color: #ccd6f6;
   }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer components {
@@ -134,5 +139,85 @@
   
   .btn-outline {
     @apply px-4 py-2 border border-portfolio-teal text-portfolio-teal rounded hover:bg-portfolio-teal/10 transition-colors duration-300 text-sm;
+  }
+  
+  /* New interactive elements */
+  .highlight-text {
+    @apply relative inline-block;
+  }
+  
+  .highlight-text::after {
+    content: "";
+    @apply absolute left-0 bottom-0 w-0 h-[2px] bg-portfolio-teal transition-all duration-300;
+  }
+  
+  .highlight-text:hover::after {
+    @apply w-full;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
+  }
+  
+  .icon-hover {
+    @apply transition-all duration-300 hover:scale-110 hover:text-portfolio-teal;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  .animate-slide-right {
+    animation: slideRight 0.8s ease-out;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulseSoft 3s infinite;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes pulseSoft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
   }
 }

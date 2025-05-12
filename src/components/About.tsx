@@ -1,7 +1,10 @@
 
 import Section from './Section';
+import { useState } from 'react';
 
 const About = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  
   return (
     <Section id="about" title="About Me">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -25,15 +28,19 @@ const About = () => {
             and have received recognition including the Rajyapuraskar Award from the Governor of India.
           </p>
         </div>
-        <div className="relative group mx-auto">
-          <div className="w-64 h-64 sm:w-80 sm:h-80 bg-gray-300 rounded relative z-10 overflow-hidden">
+        <div 
+          className="relative group mx-auto cursor-pointer"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div className={`w-64 h-64 sm:w-80 sm:h-80 bg-gray-300 rounded relative z-10 overflow-hidden transition-all duration-500 ${isHovered ? 'shadow-[0_0_30px_rgba(100,255,218,0.4)]' : ''}`}>
             <img 
               src="/lovable-uploads/afad9125-9d3a-4790-978a-bfb5603bfe6e.png" 
               alt="C A Aravind" 
-              className="w-full h-full object-cover"
+              className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-105' : ''}`}
             />
           </div>
-          <div className="absolute inset-0 border-2 border-portfolio-teal rounded translate-x-5 translate-y-5 z-0 group-hover:translate-x-4 group-hover:translate-y-4 transition-all duration-300"></div>
+          <div className={`absolute inset-0 border-2 border-portfolio-teal rounded z-0 transition-all duration-500 ${isHovered ? 'translate-x-3 translate-y-3' : 'translate-x-5 translate-y-5'}`}></div>
         </div>
       </div>
     </Section>

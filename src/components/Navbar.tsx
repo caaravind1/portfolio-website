@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -82,9 +82,10 @@ const Navbar = () => {
             }}>Contact</a>
             <Button 
               variant="outline" 
-              className="border-portfolio-teal text-portfolio-teal hover:bg-portfolio-teal/10"
+              className="border-portfolio-teal text-portfolio-teal hover:bg-portfolio-teal/10 flex items-center gap-2"
               onClick={handleResumeClick}
             >
+              <FileText size={18} />
               Resume
             </Button>
           </nav>
@@ -136,25 +137,28 @@ const Navbar = () => {
           }}>Contact</a>
           <Button 
             variant="outline" 
-            className="border-portfolio-teal text-portfolio-teal hover:bg-portfolio-teal/10 mt-6"
+            className="border-portfolio-teal text-portfolio-teal hover:bg-portfolio-teal/10 mt-6 flex items-center gap-2"
             onClick={handleResumeClick}
           >
+            <FileText size={18} />
             Resume
           </Button>
         </nav>
       </div>
       
       <Dialog open={showResumeDialog} onOpenChange={setShowResumeDialog}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden">
+        <DialogContent className="max-w-3xl w-full bg-portfolio-navy border border-portfolio-teal">
           <DialogHeader>
-            <DialogTitle className="text-portfolio-teal font-bold text-xl">C A Aravind - Resume</DialogTitle>
+            <DialogTitle className="text-portfolio-teal font-bold text-xl text-center">C A Aravind - Resume</DialogTitle>
           </DialogHeader>
-          <div className="w-full h-[calc(90vh-100px)] overflow-auto">
-            <iframe 
-              src="/lovable-uploads/39e31d1c-c192-453e-bbcf-627f738775b0.png" 
-              className="w-full h-full" 
-              title="Resume"
-            />
+          <div className="flex justify-center items-center p-2">
+            <div className="bg-white w-full max-h-[70vh] overflow-auto rounded">
+              <img 
+                src="/lovable-uploads/8f684ce8-90fd-498b-a871-691381aafd81.png" 
+                className="w-full h-auto object-contain"
+                alt="Resume"
+              />
+            </div>
           </div>
         </DialogContent>
       </Dialog>

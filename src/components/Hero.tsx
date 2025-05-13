@@ -1,4 +1,3 @@
-
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from "@/hooks/use-toast";
@@ -71,7 +70,7 @@ const Hero = () => {
           <div className="flex justify-center items-center p-2">
             <div className="bg-white w-full max-h-[70vh] overflow-auto rounded">
               <img 
-                src="/lovable-uploads/8f684ce8-90fd-498b-a871-691381aafd81.png" 
+                src="/lovable-uploads/39e31d1c-c192-453e-bbcf-627f738775b0.png" 
                 className="w-full h-auto object-contain"
                 alt="Resume"
               />

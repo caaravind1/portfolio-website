@@ -1,6 +1,7 @@
 import Section from './Section';
 import { ExternalLink, Github, FolderOpen } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface Project {
   title: string;
@@ -9,6 +10,7 @@ interface Project {
   githubLink: string;
   liveLink?: string;
   featured: boolean;
+  image?: string;
 }
 
 const Projects = () => {
@@ -19,7 +21,8 @@ const Projects = () => {
       technologies: ["HTML", "CSS", "PHP", "MySQL"],
       githubLink: "#",
       liveLink: "#",
-      featured: true
+      featured: true,
+      image: "/lovable-uploads/ee342438-02c9-4448-851e-f0e27992321d.png"
     },
     {
       title: "Network Security Dashboard",
@@ -55,6 +58,25 @@ const Projects = () => {
   const featuredProjects = projects.filter(project => project.featured);
   const otherProjects = projects.filter(project => !project.featured);
 
+  const clothingStoreScreenshots = [
+    {
+      title: "Store Homepage",
+      image: "/lovable-uploads/ee342438-02c9-4448-851e-f0e27992321d.png"
+    },
+    {
+      title: "Customer Login",
+      image: "/lovable-uploads/365277a4-ccce-4d40-9855-8ad2ce7c512e.png"
+    },
+    {
+      title: "Admin Dashboard",
+      image: "/lovable-uploads/ccde1f61-9616-4002-a0a2-c9164246b8ef.png"
+    },
+    {
+      title: "Product Management",
+      image: "/lovable-uploads/5033e763-dae7-44f5-8b92-fb69f677e10e.png"
+    }
+  ];
+
   return (
     <Section id="projects" title="Projects" className="bg-portfolio-navy/30">
       {/* Featured Projects */}
@@ -69,9 +91,21 @@ const Projects = () => {
               }`}
             >
               <div className={`md:col-span-7 ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
-                <div className="bg-gray-500 h-64 rounded-lg flex items-center justify-center">
-                  <span className="text-white">Project Screenshot</span>
-                </div>
+                {project.title === "Online Clothing Store" ? (
+                  <div className="rounded-lg overflow-hidden">
+                    <AspectRatio ratio={16/9}>
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover"
+                      />
+                    </AspectRatio>
+                  </div>
+                ) : (
+                  <div className="bg-gray-500 h-64 rounded-lg flex items-center justify-center">
+                    <span className="text-white">Project Screenshot</span>
+                  </div>
+                )}
               </div>
               <div className={`md:col-span-5 ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
                 <p className="text-portfolio-teal font-mono mb-1">Featured Project</p>
@@ -101,6 +135,27 @@ const Projects = () => {
           ))}
         </div>
       </div>
+
+      {/* Online Store Screenshots */}
+      {featuredProjects.some(project => project.title === "Online Clothing Store") && (
+        <div className="mb-20">
+          <h3 className="text-xl font-bold mb-8 text-portfolio-light">Online Clothing Store Screenshots</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {clothingStoreScreenshots.map((screenshot, index) => (
+              <div key={index} className="bg-portfolio-navy p-4 rounded-lg shadow-lg">
+                <h4 className="text-portfolio-light text-lg mb-3">{screenshot.title}</h4>
+                <AspectRatio ratio={16/9} className="overflow-hidden rounded-md">
+                  <img 
+                    src={screenshot.image} 
+                    alt={screenshot.title} 
+                    className="w-full h-full object-cover" 
+                  />
+                </AspectRatio>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Other Projects */}
       <div>

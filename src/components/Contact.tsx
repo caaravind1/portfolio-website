@@ -1,7 +1,7 @@
 
 import Section from './Section';
 import { Button } from '@/components/ui/button';
-import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Github, Linkedin} from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const Contact = () => {
@@ -11,7 +11,7 @@ const Contact = () => {
         <p className="text-portfolio-slate mb-8">
           I'm currently studying and looking for opportunities to grow as a Full Stack Developer. 
           Whether you have a question, a project idea, or just want to say hi, 
-          I'll do my best to get back to you!
+          I'll get back to you!
         </p>
         <Button 
           className="btn-primary text-lg mb-12 group transition-all duration-300 hover:bg-portfolio-teal hover:text-portfolio-navy"

@@ -39,33 +39,12 @@ const Projects = () => {
     {
       title: "movWe:Connecting Cinema",
       description: "A cinema management application allowing theaters to manage shows, customers to book tickets, and administrators to oversee operations. Features include movie management, seat allocation, and booking system.",
-      technologies: ["React", "TypeScript", "Node.js", "MySQL"],
+      technologies: ["HTML", "JavaScript", "Django","Android", "MySQL"],
       githubLink: "#",
       featured: true,
       image: "/lovable-uploads/d75ac794-69ca-45a0-bae2-c549b7ab507b.png"
     },
-    {
-      title: "Data Analysis Tool",
-      description: "Tool for analyzing and visualizing data sets, developed using skills acquired from IBM's Data Analysis with Python certification.",
-      technologies: ["Python", "Pandas", "Matplotlib", "Jupyter"],
-      githubLink: "#",
-      featured: false
-    },
-    {
-      title: "Cybersecurity Risk Assessment",
-      description: "Application to evaluate and manage security risks in computer systems, based on Google's 'Play it Safe' certification principles.",
-      technologies: ["JavaScript", "HTML5", "CSS3", "Security APIs"],
-      githubLink: "#",
-      liveLink: "#",
-      featured: false
-    },
-    {
-      title: "Full Stack Portfolio",
-      description: "Personal portfolio website showcasing skills and projects, with responsive design and modern web technologies.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-      githubLink: "#",
-      featured: false
-    }
+    
   ];
 
   const featuredProjects = projects.filter(project => project.featured);

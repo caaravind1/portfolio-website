@@ -21,7 +21,7 @@ const Experience = () => {
           organization: "SCMS School of Technology and Management Kochi",
           period: "2022 - 2025",
           description: [
-            "GPA: 6.76",
+            "GPA: 6",
             "Graduated with Bachelor's degree in Computer Science and Applications",
             "Focused on various aspects of computer science including programming, web development, and database management"
           ]

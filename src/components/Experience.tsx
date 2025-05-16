@@ -13,6 +13,23 @@ interface ExperienceItem {
 const Experience = () => {
   const experienceCategories = [
     {
+      category: "work",
+      label: "Work",
+      items: [
+        {
+          title: "Data Analyst Intern",
+          organization: "Airtel",
+          period: "2025 - Present",
+          description: [
+            "Working as a Data Analyst Intern at Airtel",
+            "Analyzing telecommunications data to extract actionable insights",
+            "Creating data visualizations and reports for stakeholders",
+            "Contributing to data-driven decision making processes"
+          ]
+        }
+      ]
+    },
+    {
       category: "education",
       label: "Education",
       items: [
@@ -86,8 +103,8 @@ const Experience = () => {
   return (
     <Section id="experience" title="Experience & Education">
       <div className="max-w-3xl mx-auto">
-        <Tabs defaultValue={experienceCategories[0].category}>
-          <TabsList className="grid grid-cols-3 mb-6">
+        <Tabs defaultValue="work">
+          <TabsList className="grid grid-cols-4 mb-6">
             {experienceCategories.map((expCategory, index) => (
               <TabsTrigger 
                 key={index} 

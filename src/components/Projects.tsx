@@ -1,3 +1,4 @@
+
 import Section from './Section';
 import { ExternalLink, Github, FolderOpen } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -23,6 +24,7 @@ interface Screenshot {
 
 const Projects = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<string>("Online Clothing Store");
   
   const projects: Project[] = [
     {
@@ -35,11 +37,12 @@ const Projects = () => {
       image: "/lovable-uploads/ee342438-02c9-4448-851e-f0e27992321d.png"
     },
     {
-      title: "Network Security Dashboard",
-      description: "A comprehensive dashboard for monitoring network security, inspired by the 'Connect and Protect' Google certification course.",
-      technologies: ["Python", "JavaScript", "CSS", "Security APIs"],
+      title: "movWe:Connecting Cinema",
+      description: "A cinema management application allowing theaters to manage shows, customers to book tickets, and administrators to oversee operations. Features include movie management, seat allocation, and booking system.",
+      technologies: ["React", "TypeScript", "Node.js", "MySQL"],
       githubLink: "#",
-      featured: true
+      featured: true,
+      image: "/lovable-uploads/d75ac794-69ca-45a0-bae2-c549b7ab507b.png"
     },
     {
       title: "Data Analysis Tool",
@@ -68,26 +71,47 @@ const Projects = () => {
   const featuredProjects = projects.filter(project => project.featured);
   const otherProjects = projects.filter(project => !project.featured);
 
-  const clothingStoreScreenshots: Screenshot[] = [
-    {
-      title: "Store Homepage",
-      image: "/lovable-uploads/ee342438-02c9-4448-851e-f0e27992321d.png"
-    },
-    {
-      title: "Customer Login",
-      image: "/lovable-uploads/365277a4-ccce-4d40-9855-8ad2ce7c512e.png"
-    },
-    {
-      title: "Admin Dashboard",
-      image: "/lovable-uploads/ccde1f61-9616-4002-a0a2-c9164246b8ef.png"
-    },
-    {
-      title: "Product Management",
-      image: "/lovable-uploads/5033e763-dae7-44f5-8b92-fb69f677e10e.png"
-    }
-  ];
+  const projectScreenshots: Record<string, Screenshot[]> = {
+    "Online Clothing Store": [
+      {
+        title: "Store Homepage",
+        image: "/lovable-uploads/ee342438-02c9-4448-851e-f0e27992321d.png"
+      },
+      {
+        title: "Customer Login",
+        image: "/lovable-uploads/365277a4-ccce-4d40-9855-8ad2ce7c512e.png"
+      },
+      {
+        title: "Admin Dashboard",
+        image: "/lovable-uploads/ccde1f61-9616-4002-a0a2-c9164246b8ef.png"
+      },
+      {
+        title: "Product Management",
+        image: "/lovable-uploads/5033e763-dae7-44f5-8b92-fb69f677e10e.png"
+      }
+    ],
+    "movWe:Connecting Cinema": [
+      {
+        title: "Home Page",
+        image: "/lovable-uploads/d75ac794-69ca-45a0-bae2-c549b7ab507b.png"
+      },
+      {
+        title: "Manage Movies",
+        image: "/lovable-uploads/d17357b3-d1cf-44d1-bf42-0590ecae82a6.png"
+      },
+      {
+        title: "Manage Seat Types",
+        image: "/lovable-uploads/5798945c-092f-437e-8ded-8c872afc943a.png"
+      },
+      {
+        title: "Admin Dashboard",
+        image: "/lovable-uploads/ba9e3499-9156-41cf-bf8b-dfc4295c3f13.png"
+      }
+    ]
+  };
 
-  const handleOpenScreenshotDialog = () => {
+  const handleOpenScreenshotDialog = (projectTitle: string) => {
+    setSelectedProject(projectTitle);
     setDialogOpen(true);
   };
 
@@ -105,10 +129,10 @@ const Projects = () => {
               }`}
             >
               <div className={`md:col-span-7 ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
-                {project.title === "Online Clothing Store" ? (
+                {project.image ? (
                   <div 
                     className="rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
-                    onClick={handleOpenScreenshotDialog}
+                    onClick={() => handleOpenScreenshotDialog(project.title)}
                   >
                     <AspectRatio ratio={16/9}>
                       <img 
@@ -153,16 +177,16 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Online Store Screenshots */}
-      {featuredProjects.some(project => project.title === "Online Clothing Store") && (
-        <div className="mb-20">
-          <h3 className="text-xl font-bold mb-8 text-portfolio-light">Online Clothing Store Screenshots</h3>
+      {/* Project Screenshots Sections */}
+      {Object.keys(projectScreenshots).map(projectName => (
+        <div key={projectName} className="mb-20">
+          <h3 className="text-xl font-bold mb-8 text-portfolio-light">{projectName} Screenshots</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {clothingStoreScreenshots.map((screenshot, index) => (
+            {projectScreenshots[projectName].map((screenshot, index) => (
               <div 
                 key={index} 
                 className="bg-portfolio-navy p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90 transition-opacity"
-                onClick={handleOpenScreenshotDialog}
+                onClick={() => handleOpenScreenshotDialog(projectName)}
               >
                 <h4 className="text-portfolio-light text-lg mb-3">{screenshot.title}</h4>
                 <AspectRatio ratio={16/9} className="overflow-hidden rounded-md">
@@ -176,16 +200,16 @@ const Projects = () => {
             ))}
           </div>
         </div>
-      )}
+      ))}
 
       {/* Screenshots Dialog */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogContent className="max-w-5xl p-0 overflow-hidden bg-portfolio-navy border-portfolio-navy">
           <div className="p-6">
-            <h2 className="text-xl font-bold text-portfolio-light mb-4">Online Clothing Store Screenshots</h2>
+            <h2 className="text-xl font-bold text-portfolio-light mb-4">{selectedProject} Screenshots</h2>
             <Carousel className="w-full">
               <CarouselContent>
-                {clothingStoreScreenshots.map((screenshot, index) => (
+                {projectScreenshots[selectedProject]?.map((screenshot, index) => (
                   <CarouselItem key={index}>
                     <div className="p-1">
                       <div className="overflow-hidden rounded-lg">

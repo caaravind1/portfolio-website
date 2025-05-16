@@ -104,12 +104,12 @@ const Experience = () => {
     <Section id="experience" title="Experience & Education">
       <div className="max-w-3xl mx-auto">
         <Tabs defaultValue="work">
-          <TabsList className="grid grid-cols-4 mb-6">
+          <TabsList className="grid grid-cols-4 mb-6 bg-portfolio-navy border border-portfolio-teal/30">
             {experienceCategories.map((expCategory, index) => (
               <TabsTrigger 
                 key={index} 
                 value={expCategory.category}
-                className="data-[state=active]:bg-portfolio-teal/10 data-[state=active]:text-portfolio-teal font-mono"
+                className="data-[state=active]:bg-portfolio-teal/10 data-[state=active]:text-portfolio-teal text-portfolio-slate hover:text-portfolio-light font-mono"
               >
                 {expCategory.label}
               </TabsTrigger>

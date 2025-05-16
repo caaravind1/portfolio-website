@@ -59,7 +59,7 @@ const Contact = () => {
             <Tooltip>
               <TooltipTrigger asChild>
                 <a 
-                  href="https://www.linkedin.com/in/caaravind" 
+                  href="https://www.linkedin.com/in/caravind/" 
                   className="text-portfolio-slate hover:text-portfolio-teal transition-colors transform hover:scale-110 transition-all duration-300"
                   aria-label="LinkedIn"
                 >
